@@ -17,9 +17,9 @@ export class Flights{
     @Column('timestamp with time zone')
     depart: Date;
 
-  @Column('timestamp with time zone')
-  arrive: Date;
+    @Column('timestamp with time zone')
+    arrive: Date;
 
-  @Column('boolean')
-  nonstop: boolean;
+    @Column('boolean')
+    nonstop: boolean;
 }

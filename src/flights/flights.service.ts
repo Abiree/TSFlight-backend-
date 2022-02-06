@@ -16,6 +16,21 @@ export class FlightsService {
         return this.flightsRepository.findOne(id);
     }
 
+    async create(flight:Flights){
+        return this.flightsRepository.insert(flight);
+    }
+
+    async update(id: number, updateflight: Flights) {
+
+        return this.flightsRepository.update({id}, {...updateflight});
+        
+      }
+ 
+    async remove(id:number){
+        return this.flightsRepository.delete(id);
+    }
+   
+
    
 
 }
