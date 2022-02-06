@@ -3,23 +3,23 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Flights{
     @PrimaryGeneratedColumn()
-    id:number;
+    id: number;
 
-    @Column()
-    origin:string;
+    @Column("varchar", { length: 20 })
+    origin: string;
 
-    @Column()
-    destination:string;
+    @Column("varchar", { length: 20 })
+    destination: string;
 
-    @Column()
-    flightNumber:number;
+    @Column('int')
+    flightnumber: number;
 
-    @Column()
-    depart:Date;
+    @Column('timestamp with time zone')
+    depart: Date;
 
-    @Column()
-    arrive:Date;
+  @Column('timestamp with time zone')
+  arrive: Date;
 
-    @Column()
-    nonstop:string;
+  @Column('boolean')
+  nonstop: boolean;
 }

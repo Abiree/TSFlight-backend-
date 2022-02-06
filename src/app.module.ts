@@ -8,14 +8,14 @@ import { FlightsService } from './flights/flights.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Flights]),TypeOrmModule.forRoot({
-    type:'postgres',
-    host:'localhost',
-    port:5432,
-    username:'postgres',
-    password:'rootroot',
-    database:'transportation',
-    entities:[Flights],
-    synchronize:true,
+    type: 'postgres',
+    host: 'localhost',
+    port: 5432,
+    username: 'postgres',
+    password: 'rootroot',
+    database: 'transportation',
+    entities: [Flights],
+    synchronize: true,
   })],
   controllers: [AppController, FlightsController],
   providers: [AppService, FlightsService],
