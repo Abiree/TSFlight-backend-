@@ -34,6 +34,14 @@ export class FlightsService {
         return await this.flightsRepository.find({origin:org,destination:dest});
 
     }
+
+    async getOrigin():Promise<String[]>{
+        return this.flightsRepository.query("SELECT DISTINCT origin FROM flights");
+    }
+
+    async getDest():Promise<String[]>{
+        return this.flightsRepository.query("SELECT DISTINCT destination FROM flights");
+    }
    
 
    

@@ -21,6 +21,16 @@ export class FlightsController {
     return this.flightservice.query(org,dest)
   }
 
+  @Get('/cities/origin')
+  getOrigin():Promise<String[]>{
+    return this.flightservice.getOrigin();
+  }
+
+  @Get('/cities/dest')
+  getDest():Promise<String[]>{
+    return this.flightservice.getDest();
+  }
+
   @Post()
   create(@Body() flight:Flights):Promise<Flights[]> {
     return this.flightservice.create(flight);
@@ -37,5 +47,7 @@ export class FlightsController {
   remove(@Param() param):Promise<any> {
     return this.flightservice.remove(param.id);
   }
+
+
   
 }
